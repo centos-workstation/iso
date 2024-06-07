@@ -15,9 +15,12 @@ services --enabled=sshd # Enable SSH service for remote access
 
 rootpw --iscrypted locked #Disable direct root password login
 
+# --- Bootloader ---
+bootloader --append "rhgb quiet"
+
 %post
 
-# -- systemd Services --
+# --- systemd Services ---
 systemctl disable kdump.service
 systemctl enable gdm.service
 systemctl enable flatpak-remotes.service
