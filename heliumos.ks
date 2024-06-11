@@ -20,6 +20,8 @@ bootloader --append "rhgb quiet"
 
 %post
 
+rm -f /var/lib/systemd/random-seed
+
 # --- systemd Services ---
 systemctl disable kdump.service
 systemctl enable gdm.service
