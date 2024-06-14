@@ -6,12 +6,15 @@ clearpart --all --initlabel --disklabel=gpt
 reqpart --add-boot
 part / --grow --fstype xfs
 
+# -- Disable Kdump --
+%addon com_redhat_kdump --disable
+%end
+
 # --- Container Image Installation --
-ostreecontainer --url quay.io/heliumos/bootc:latest
+ostreecontainer --url quay.io/heliumos/bootc:dev
 
 # --- Basic Security ---
-firewall --disabled # Disable the firewall (consider hardening this later)
-services --enabled=sshd # Enable SSH service for remote access
+firewall --disabled
 
 rootpw --iscrypted locked #Disable direct root password login
 
