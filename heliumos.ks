@@ -11,7 +11,7 @@ part / --grow --fstype xfs
 %end
 
 # --- Container Image Installation --
-ostreecontainer --url quay.io/heliumos/bootc:dev
+ostreecontainer --url quay.io/heliumos/bootc:latest
 
 # --- Basic Security ---
 firewall --disabled
