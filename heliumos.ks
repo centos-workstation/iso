@@ -14,7 +14,7 @@ part / --grow --fstype xfs
 ostreecontainer --url quay.io/heliumos/bootc:9
 
 # --- Basic Security ---
-firewall --disabled
+firewall --enabled
 
 rootpw --iscrypted locked #Disable direct root password login
 
@@ -26,7 +26,6 @@ bootloader --append "rhgb quiet"
 rm -f /var/lib/systemd/random-seed
 
 # --- systemd Services ---
-systemctl disable kdump.service
 systemctl enable gdm.service
 systemctl enable flatpak-remotes.service
 
