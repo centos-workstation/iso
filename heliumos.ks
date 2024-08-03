@@ -25,9 +25,4 @@ bootloader --append "rhgb quiet"
 
 rm -f /var/lib/systemd/random-seed
 
-# --- systemd Services ---
-systemctl enable gdm.service
-systemctl enable flatpak-remotes.service
-
 %end
-
