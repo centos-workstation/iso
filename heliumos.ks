@@ -4,7 +4,7 @@ network --bootproto=dhcp --device=link --activate
 # Partioning Setup
 clearpart --all --initlabel --disklabel=gpt
 reqpart --add-boot
-part / --grow --fstype xfs
+part / --grow --fstype ext4
 
 # -- Disable Kdump --
 %addon com_redhat_kdump --disable
