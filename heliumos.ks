@@ -18,9 +18,6 @@ firewall --enabled
 
 rootpw --iscrypted locked #Disable direct root password login
 
-# --- Bootloader ---
-bootloader --append "rhgb quiet"
-
 %post
 
 rm -f /var/lib/systemd/random-seed
